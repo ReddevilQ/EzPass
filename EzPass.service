@@ -1,0 +1,11 @@
+[Unit]
+Description=Run script after first user login
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/nick/Git/EzPass/EzPass.sh
+RemainAfterExit=true
+
+[Install]
+WantedBy=graphical-session.target
