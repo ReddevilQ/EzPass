@@ -4,7 +4,7 @@ After=graphical-session.target
 
 [Service]
 Type=oneshot
-ExecStart=/home/nick/Git/EzPass/EzPass.sh
+ExecStart=/opt/EzPass.sh
 RemainAfterExit=true
 
 [Install]
