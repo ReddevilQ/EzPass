@@ -9,3 +9,6 @@ Requeierments
 
 Have a keepassxc db with the 2 passwords make sure to not have a passoword only a Key-file
 
+'''
+  echo "alias shutdown="~/Git/EzPass/HardPass.sh && shutdown now"" >> ~/.zshrc
+'''
