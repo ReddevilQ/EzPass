@@ -4,7 +4,7 @@ set -euo pipefail
 DB="/home/nick/Documents/Passwords.kdbx"
 KEYFILE="/home/nick/Documents/KeeKee"
 ENTRY="HARDKEE"
-TARGET_USER="${USER}"
+TARGET_USER="nick"
 
 need() {
   command -v "$1" >/dev/null 2>&1 || {
