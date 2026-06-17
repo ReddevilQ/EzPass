@@ -8,7 +8,7 @@ TARGET_USER="${USER}"
 
 need() {
   command -v "$1" >/dev/null 2>&1 || {
-    echo "Missing dependency: $1" >&2 | logger -t "EzPass"
+    echo "Missing dependency: $1" >&2 | logger -t "HardPass"
     exit 1
   }
 }
@@ -34,4 +34,4 @@ fi
 printf '%s:%s\n' "$TARGET_USER" "$password" | sudo chpasswd
 
 unset password
-echo " Password updated for $TARGET_USER" | logger -t "EzPass"
+echo " Password updated for $TARGET_USER" | logger -t "HardPass"

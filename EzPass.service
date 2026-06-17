@@ -1,11 +1,11 @@
 [Unit]
 Description=Run script after first user login
-After=graphical-session.target
+After=graphical.target
 
 [Service]
 Type=oneshot
-ExecStart=/opt/EzPass.sh
+ExecStart=/usr/local/bin/EzPass.sh
 RemainAfterExit=true
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=graphical.target
