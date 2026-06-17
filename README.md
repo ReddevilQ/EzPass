@@ -3,8 +3,8 @@ A simple way to use 2 passwords at the same time one long for First Login and on
 
 
 Requeierments 
-  KeePassxc-cli 
-  chpasswd
+ - KeePassxc-cli 
+ - chpasswd
 
 
 Have a keepassxc db with the 2 passwords make sure to not have a passoword only a Key-file
