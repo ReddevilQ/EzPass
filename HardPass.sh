@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DB="/home/nick/Documents/Passwords.kdbx"
-KEYFILE="/home/nick/Documents/KeeKee"
-ENTRY="HARDKEE"
-TARGET_USER="nick"
+DB=""          # KeePass Database
+KEYFILE=""     # KeePass Key File
+ENTRY=""       # Name of KeePass Entry
+TARGET_USER="" # User
 TAG="HardPass"
 
 LIB="/usr/local/lib/ezpass/lib.sh"
