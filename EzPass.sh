@@ -5,34 +5,14 @@ DB="/home/nick/Documents/Passwords.kdbx"
 KEYFILE="/home/nick/Documents/KeeKee"
 ENTRY="EZKEE"
 TARGET_USER="nick"
+TAG="EzPass"
 
-need() {
-  command -v "$1" >/dev/null 2>&1 || {
-    echo "Missing dependency: $1" >&2 | logger -t "EzPass"
-    exit 1
-  }
-}
-
-need keepassxc-cli
-need sudo
-need chpasswd
-
-password="$(
-  keepassxc-cli show \
-    --quiet \
-    --no-password \
-    --key-file "$KEYFILE" \
-    --attributes Password \
-    "$DB" "$ENTRY" |
-    head -n1
-)"
-
-if [[ -z "${password}" ]]; then
-  echo "Failed to read password from KeePass entry: $ENTRY" >&2 | logger -t "EzPass"
+LIB="/usr/local/lib/ezpass/lib.sh"
+if [[ ! -f "$LIB" ]]; then
+  echo "Missing $LIB - see README for install steps" >&2
   exit 1
 fi
+# shellcheck source=lib.sh
+source "$LIB"
 
-printf '%s:%s\n' "$TARGET_USER" "$password" | sudo chpasswd
-
-unset password
-echo "Password updated for user: $TARGET_USER" | logger -t "EzPass"
+apply_password

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# systemd shutdown hook: runs on every reboot/poweroff/halt/kexec, no matter
+# how it was triggered (unlike a shell alias). Install to
+# /usr/lib/systemd/system-shutdown/ and mark executable.
+set -euo pipefail
+
+exec /usr/local/bin/HardPass.sh
